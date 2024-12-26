@@ -29,7 +29,7 @@ num_zookeepers = 1
 num_brokers = 3
 num_workers = 0 # Generic workers that get the code, but don't start any services
 ram_megabytes = 1280
-base_box = "ubuntu/trusty64"
+base_box = "ubuntu/bionic64"
 
 # EC2
 ec2_access_key = ENV['AWS_ACCESS_KEY']
@@ -59,7 +59,7 @@ jdk_major = '17'
 jdk_full = '17-linux-x64'
 
 local_config_file = File.join(File.dirname(__FILE__), "Vagrantfile.local")
-if File.exist?(local_config_file) then
+if File.exists?(local_config_file) then
   eval(File.read(local_config_file), binding, "Vagrantfile.local")
 end
 
